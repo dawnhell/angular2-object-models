@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "firstName": "Warren",
+    "lastName": "Buffett",
+    "company": "Berkshire Hathaway",
+    "email": "berkshire@berkshirehathaway.com"
+  },
+  {
+    "id": 2,
+    "firstName": "Jeff",
+    "lastName": "Bezos",
+    "company": "Amazon",
+    "email": "jeff@amazon.com"
+  },
+  {
+    "id": 3,
+    "firstName": "Larry",
+    "lastName": "Page",
+    "company": "Alphabet",
+    "email": "lary@alphabet.com"
+  },
+  {
+    "id": 4,
+    "firstName": "Mark",
+    "lastName": "Zuckerberg",
+    "company": "Facebook",
+    "email": "zuck@facebook.com"
+  },
+  {
+    "id": 5,
+    "firstName": "Donald",
+    "lastName": "Trump",
+    "company": "President-elect of the USA",
+    "email": "donaldtrump@donaldjtrump.com"
+  }
+]

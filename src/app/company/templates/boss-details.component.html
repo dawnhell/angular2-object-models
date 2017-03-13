@@ -1,0 +1,71 @@
+<div class="boss-details">
+    <form class="form"
+          [formGroup]="bossDetailsForm"
+          (ngSubmit)="onUpdateBoss()">
+        <div class="form-group row">
+            <label for="firstName" class="col-md-3 col-form-label">First name:</label>
+            <div class="col-md-7">
+                <input class="form-control"
+                       type="text"
+                       placeholder="Enter first name"
+                       id="firstName"
+                       [formControl]="bossDetailsForm.controls['firstName']"
+                       [(ngModel)]="bossDetails.firstName"
+                       #firstName="ngForm"
+                       [class.invalid]="!firstName.valid"
+                />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="lastName" class="col-md-3 col-form-label">Last name:</label>
+            <div class="col-md-7">
+                <input class="form-control"
+                       type="text"
+                       placeholder="Enter last name"
+                       id="lastName"
+                       [formControl]="bossDetailsForm.controls['lastName']"
+                       [(ngModel)]="bossDetails.lastName"
+                       #lastName="ngForm"
+                       [class.invalid]="!lastName.valid"
+                />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="company" class="col-md-3 col-form-label">Company:</label>
+            <div class="col-md-7">
+                <input class="form-control"
+                       type="text"
+                       placeholder="Enter position"
+                       id="company"
+                       [formControl]="bossDetailsForm.controls['company']"
+                       [(ngModel)]="bossDetails.company"
+                       #company="ngForm"
+                       [class.invalid]="!company.valid"
+                />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="email" class="col-md-3 col-form-label">E-mail:</label>
+            <div class="col-md-7">
+                <input class="form-control"
+                       type="text"
+                       placeholder="Enter email"
+                       id="email"
+                       [formControl]="bossDetailsForm.controls['email']"
+                       [(ngModel)]="bossDetails.email"
+                       #email="ngForm"
+                       [class.invalid]="!email.valid"
+                />
+            </div>
+        </div>
+        <div *ngIf="!bossDetailsForm.valid"
+             class="hint">
+            Please, fill up the form
+        </div>
+        <button type="submit"
+                class="btn btn-primary"
+                [disabled]="!bossDetailsForm.valid">
+            Save
+        </button>
+    </form>
+</div>

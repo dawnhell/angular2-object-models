@@ -1,0 +1,73 @@
+<div class="card-header"
+     role="tab"
+     id="companyHeading">
+    <h5 class="mb-0">
+        <a data-toggle="collapse"
+           data-parent="#accordion"
+           href="#companyCollapse"
+           aria-expanded="false"
+           aria-controls="companyCollapse"
+           (click)="refreshList()">
+            Company
+        </a>
+    </h5>
+</div>
+<div id="companyCollapse"
+     class="collapse"
+     role="tabpanel"
+     aria-labelledby="companyHeading">
+    <div class="card-block">
+        <button type="button"
+                class="btn btn-outline-info refresh-btn"
+                (click)="refreshList()">
+            Refresh list
+        </button>
+        <div class="create-company">
+            <form class="form"
+                  (ngSubmit)="onCreateCompany()">
+                <div class="form-group col-md-4 offset-md-4">
+                    <label for="firstName"
+                           class="company-name">
+                        Choose company name
+                    </label>
+                    <input type="text"
+                           class="form-control"
+                           id="firstName"
+                           name="companyName"
+                           placeholder="My Dream Company"
+                           [(ngModel)]="companyName">
+                </div>
+                <div class="col-md-3 offset-md-4 person-list">
+                    <div class="form-check checkbox checkbox-primary"
+                         *ngFor="let boss of bossList">
+                        <label class="form-check-label">
+                            <input type="checkbox"
+                                   id="checkbox"
+                                   class="form-check-input"
+                                   name="bosses"
+                                   [(ngModel)]="boss.selected">
+                            {{boss.firstName}} {{boss.lastName}}
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-3 person-list">
+                    <div class="form-check"
+                         *ngFor="let employee of employeeList">
+                        <label class="form-check-label">
+                            <input type="checkbox"
+                                   class="form-check-input"
+                                   name="employees"
+                                   [(ngModel)]="employee.selected">
+                            {{employee.firstName}} {{employee.lastName}}
+                        </label>
+                    </div>
+                </div>
+                <button type="submit"
+                        class="btn btn-primary col-md-4 offset-md-4 create-btn"
+                        [disabled]="!companyName">
+                    Create
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

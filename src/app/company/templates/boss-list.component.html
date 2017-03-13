@@ -1,0 +1,73 @@
+<div class="card-header"
+     role="tab"
+     id="bossHeading">
+    <h5 class="mb-0">
+        <a data-toggle="collapse"
+           data-parent="#accordion"
+           href="#bossCollapse"
+           aria-expanded="false"
+           aria-controls="bossCollapse">
+            World Bosses
+        </a>
+    </h5>
+</div>
+<div id="bossCollapse"
+     class="collapse"
+     role="tabpanel"
+     aria-labelledby="bossHeading">
+    <div class="card-block">
+        <div class="container new-boss">
+            <form class="form-inline"
+                  [formGroup]="addBossForm"
+                  (submit)="onAddNewBoss(addBossForm.value)">
+                <div class="form-group">
+                    <label for="firstName">First name</label>
+                    <input type="text"
+                           class="form-control"
+                           id="firstName"
+                           placeholder="Barac"
+                           [formControl]="addBossForm.controls['firstName']">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last name</label>
+                    <input type="text"
+                           class="form-control"
+                           id="lastName"
+                           placeholder="Obama"
+                           [formControl]="addBossForm.controls['lastName']">
+                </div>
+                <button type="submit"
+                        class="btn btn-primary"
+                        [disabled]="!addBossForm.valid">
+                    Add boss
+                </button>
+            </form>
+        </div>
+        <div class="list-group col-md-6">
+            <a href="#"
+               class="list-group-item list-group-item-action"
+               *ngFor="let boss of bossList"
+               (click)="onSelectBoss(boss)"
+               [class.selected]="boss === selectedBoss"
+            >
+                #{{boss.id}} {{boss.firstName}} {{boss.lastName | uppercase}}
+                <button class="btn btn-outline-warning btn-sm delete-btn"
+                        (click)="onDeleteBoss(boss)">
+                    X
+                </button>
+            </a>
+        </div>
+        <div class="col-md-6">
+            <div class="boss-details">
+                <div class="nothing-yet"
+                     *ngIf="!selectedBoss">
+                    <p>Nothing to show yet</p>
+                </div>
+                <boss-details *ngIf="selectedBoss"
+                              [(bossDetails)]="selectedBoss"
+                              [(bossList)]="bossList">
+                </boss-details>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+.refresh-btn{
+    margin-bottom: 10px;
+}
+.person-list{
+    text-align: left;
+}
+.company-name{
+    padding: 5px 0;
+    font-size: 22px;
+    color: #2b2d2f;
+}
+.card-header a {
+    color: #014c8c;
+}

@@ -1,0 +1,13 @@
+.employee-details{
+    padding: 20px 0;
+    float: left;
+    width: 100%;
+}
+.invalid{
+    border-color: red;
+}
+.hint{
+    padding: 5px 120px;
+    font-size: 20px;
+    color: #990000;
+}

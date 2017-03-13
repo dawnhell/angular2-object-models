@@ -1,0 +1,18 @@
+.delete-btn{
+    float: right;
+}
+.new-boss{
+    padding: 5px 0 20px;
+}
+.new-boss .form-group{
+    padding: 0 5px;
+}
+.card-header a {
+    color: #014c8c;
+}
+.nothing-yet{
+    padding: 100px 0;
+    font-size: 24px;
+    font-weight: bolder;
+    color: #aeaeae;
+}

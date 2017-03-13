@@ -1,0 +1,21 @@
+.no-company-yet{
+    padding: 20px 0;
+    font-size: 24px;
+    font-weight: bolder;
+    color: #aeaeae;
+}
+.title{
+    font-size: 18px;
+    font-weight: bolder;
+    padding: 5px 0;
+}
+.company-details{
+    margin: 10px;
+    padding: 20px 0;
+}
+.company-details p{
+    line-height: 0.7;
+}
+.company-details h3{
+    font-style: italic;
+}

@@ -1,0 +1,24 @@
+.delete-btn{
+    float: right;
+}
+.new-employee{
+    padding: 5px 0 20px;
+}
+.new-employee .form-group{
+    padding: 0 5px;
+}
+.card-header a {
+    color: #014c8c;
+}
+.nothing{
+    text-align: center;
+    padding-top: 140px;
+    font-size: 24px;
+    color: #e4b9b9;
+}
+.nothing-yet{
+    padding: 100px 0;
+    font-size: 24px;
+    font-weight: bolder;
+    color: #aeaeae;
+}

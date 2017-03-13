@@ -1,0 +1,73 @@
+<div class="card-header"
+     role="tab"
+     id="employeeHeading">
+    <h5 class="mb-0">
+        <a data-toggle="collapse"
+           data-parent="#accordion"
+           href="#employeeCollapse"
+           aria-expanded="false"
+           aria-controls="employeeCollapse">
+            Employees
+        </a>
+    </h5>
+</div>
+<div id="employeeCollapse"
+     class="collapse"
+     role="tabpanel"
+     aria-labelledby="employeeHeading">
+    <div class="card-block">
+        <div class="container new-employee">
+            <form class="form-inline"
+                  [formGroup]="addNewForm"
+                  (submit)="onAddNewEmployee(addNewForm.value)">
+                <div class="form-group">
+                    <label for="firstName">First name</label>
+                    <input type="text"
+                           class="form-control"
+                           id="firstName"
+                           placeholder="Will"
+                           [formControl]="addNewForm.controls['firstName']">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last name</label>
+                    <input type="text"
+                           class="form-control"
+                           id="lastName"
+                           placeholder="Smith"
+                           [formControl]="addNewForm.controls['lastName']">
+                </div>
+                <button type="submit"
+                        class="btn btn-primary"
+                        [disabled]="!addNewForm.valid">
+                    Add employee
+                </button>
+            </form>
+        </div>
+        <div class="list-group col-md-6">
+            <a href="#"
+               class="list-group-item list-group-item-action"
+               *ngFor="let employee of employeeList"
+               (click)="onSelectEmployee(employee)"
+               [class.selected]="employee === selectedEmployee"
+            >
+                #{{employee.id}} {{employee.firstName}} {{employee.lastName | uppercase}}
+                <button class="btn btn-outline-warning btn-sm delete-btn"
+                        (click)="onDeleteEmployee(employee)">
+                    X
+                </button>
+            </a>
+        </div>
+        <div class="col-md-6">
+            <div class="employee-details">
+                <div class="nothing-yet"
+                     *ngIf="!selectedEmployee">
+                    <p>Nothing to show yet</p>
+                </div>
+                <employee-details *ngIf="selectedEmployee"
+                                  [(employeeDetails)]="selectedEmployee"
+                                  [(employeeList)]="employeeList">
+                </employee-details>
+            </div>
+        </div>
+    </div>
+</div>

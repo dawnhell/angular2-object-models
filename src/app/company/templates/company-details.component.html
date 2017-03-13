@@ -1,0 +1,27 @@
+<div class="container">
+    <button type="button"
+            class="btn btn-success"
+            (click)="refreshList()">
+        Click to refresh
+    </button>
+</div>
+<div class="no-company-yet" *ngIf="isEmpty">
+    <p>No company created</p>
+</div>
+<div class="col-md-3 company-details" *ngFor="let company of companyList">
+    <div class="card">
+        <h3 class="card-header">{{company.companyName}}</h3>
+        <div class="card-block">
+            <h4 class="card-title">Bosses:</h4>
+            <p class="card-text"
+               *ngFor="let boss of company.bossList">
+                {{boss.firstName}} {{boss.lastName}}
+            </p>
+            <h4 class="card-title">Employees:</h4>
+            <p class="card-text"
+               *ngFor="let employee of company.employeeList">
+                {{employee.firstName}} {{employee.lastName}}
+            </p>
+        </div>
+    </div>
+</div>
